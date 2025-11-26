@@ -42,6 +42,6 @@ class Store:
                 price = product.buy(quantity)
                 total_price += price
             except (ValueError, Exception) as e:
-                print(f"Error processing order of {product.name}: {e}")
-                # May be optional to cancel entire order here
+                print(f"Fehler bei der Bestellung von {product.name}: {e}")
+                # Future feature? Canceling entire order here
         return total_price
