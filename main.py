@@ -18,7 +18,7 @@ def main():
     best_buy = Store(product_list)
 
     # Test the method of Store class
-    print(f"Gesamtmenge im Store: {best_buy.get_total_quantity()}")
+    print(f"Total quantity in store: {best_buy.get_total_quantity()}")
 
     # Get all active products
     active_products = best_buy.get_all_products()
@@ -37,5 +37,5 @@ def main():
         print(f"\nTotal inventory of all products after order: {best_buy.get_total_quantity()}")
 
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
