@@ -1,3 +1,8 @@
+'''
+In products.py's init, get_quantity returns int but the spec says float—change to return float(self.quantity) for precision, though it works as-is for whole numbers.
+'''
+
+
 class Product:
     def __init__(self, name, price, quantity):
         if not name:
@@ -6,13 +11,13 @@ class Product:
             raise ValueError("Price and quantity may not be negative.")
         self.name = name
         self.price = float(price)
-        self.quantity = int(quantity)
+        self.quantity = float(quantity)
         self.active = True
 
 
     def get_quantity(self) -> int:
         """Retrieves the quantity of product."""
-        return self.quantity
+        return int(self.quantity)
 
 
     def set_quantity(self, quantity):
@@ -39,7 +44,7 @@ class Product:
 
     def show(self):
         """Returns product details as string."""
-        return f"{self.name}, Preis: {self.price}, Menge: {self.quantity}"
+        return f"{self.name}, Price: {self.price}, Qty: {int(self.quantity)}"
 
 
     def buy(self, quantity) -> float:

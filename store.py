@@ -33,7 +33,7 @@ class Store:
     def order(self, shopping_list) -> float:
         """
         Processes an order to return total price.
-        Variable shopping_list ii a listo of tuples (product, qty).
+        Variable shopping_list is a list of tuples (product, qty).
         """
         total_price = 0.0
         for product, quantity in shopping_list:
@@ -42,6 +42,6 @@ class Store:
                 price = product.buy(quantity)
                 total_price += price
             except (ValueError, Exception) as e:
-                print(f"Fehler bei der Bestellung von {product.name}: {e}")
+                print(f"Error while processing order of {product.name}: {e}")
                 # Future feature? Canceling entire order here
         return total_price
